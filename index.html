@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROYECTO INTEGRADOR I </title>
+    <style>
+        .body {
+            text-align: center;
+        }
+    </style>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCV7VTSMP-wJ6huhQBlL1DdxvTQAnADKis",
+            authDomain: "domotica-pro.firebaseapp.com",
+            databaseURL: "https://domotica-pro.firebaseio.com",
+            projectId: "domotica-pro",
+            storageBucket: "domotica-pro.appspot.com",
+            messagingSenderId: "43619400225"
+        };
+        firebase.initializeApp(config);
+    </script>
+    </script>
+
+
+
+
+    <script>
+        var db = firebase.database();
+        var ref = database.ref(document);
+        db.
+        ref.on("value", function(snapshot) {
+            var document = snapshot.val();
+
+            document.getElementByName("Distancia").textContent = document.Distancia;
+            document.getElementByName("Temperatura").textContent = document.Temperatura;
+            document.getElementByName("Humedad").textContent = document.Humedad;
+        })
+    </script>
+
+
+</head>
+
+
+<body class="body">
+    <script type="text/javascript">
+    </script>
+
+    <body background="imagenes/fondo.jpg">
+
+
+        <style>
+            .texto {
+                font-size: 60px;
+                color: ghostwhite;
+                text-align: center;
+                font-style: impact;
+            }
+            
+            .texto1 {
+                font-size: 25px;
+                color: black;
+                text-align: center;
+                font-style: italic;
+                background-color: steelblue;
+                font-weight: 600;
+            }
+            
+            .texto2 {
+                font-size: 22px;
+                color: black;
+                text-align: center;
+                font-style: italic;
+                background-color: white;
+                font-weight: 600;
+            }
+            
+            .texto3 {
+                font-size: 18px;
+                color: black;
+                text-align: center;
+                font-style: italic;
+                font-weight: 600;
+            }
+        </style>
+        </style>
+
+        <p class="texto">
+            SISTEMA DOMOTICO
+        </p>
+        <style>
+            .button {
+                background-color: hsla(hue, saturation, lightness, alpha);
+                border: 10;
+                color: initial;
+                text-align: center;
+                padding: 0.01px 32px;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+        </style>
+        <img src="imagenes/espe.jpg" ,hspace=10, align="middle" , style="max-width:35%;width:auto;height:auto;">
+        <br clear=all>
+        </br>
+        <p class="texto1">
+            SENSORES UTILIZADOS
+        </p>
+        </br>
+        <table class="egt">
+            <tr>
+                <p class="texto1">
+                    <td> <img src="imagenes/sensor1.jpg" , style="max-width:35%;width:auto;height:auto;"> </td>
+                    <td> <img src="imagenes/sensor2.jpg" , style="max-width:45%;width:auto;height:auto;"></td>
+
+            </tr>
+            <tr>
+
+                <td> <img src="imagenes/sensor3.jpg" , style="max-width:35%;width:auto;height:auto;"></td>
+                <td> <img src="imagenes/sensor4.jpg" , style="max-width:45%;width:auto;height:auto;"></td>
+            </tr>
+        </table>
+        </br>
+        <button class="button" onclick="">
+   <p class="texto3">  Encender Lampara</p>
+
+  
+</button>
+        <br clear=all>
+        <td> <img src="imagenes/foco.gif" , style="max-width:35%;width:auto;height:auto;"> </td>
+        <br clear=all>
+        </br>
+        <p class="texto1">
+            DATO SENSOR TEMPERATURA
+            <p class="texto2"> Valor : <span id="Distancia"></span></p>
+        </p>
+        </br>
+        <p class="texto1">
+            DATO SENSOR 2
+            <p class="texto2"> Valor : <span id="Humedad"></span></p>
+        </p>
+        </br>
+        <p class="texto1 ">
+            DATO SENSOR 3
+            <p class="texto2"> Valor : <span id="Temperatura"></span></p>
+        </p>
+        </br>
+        <p class="texto1">
+            DATO SENSOR 4
+            <p class="texto2"> Valor : <span id=" sensor4 "></span></p>
+        </p>
+
+    </body>
+
+</html>
