@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PROYECTO INTEGRADOR I </title>
+    <title>PROYECTO INTEGRADOR I ESPE</title>
     <style>
         .body {
             text-align: center;
         }
     </style>
-
+    <script src="database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <script>
         // Initialize Firebase
         var config = {
@@ -25,23 +33,9 @@
         };
         firebase.initializeApp(config);
     </script>
-    </script>
 
 
 
-
-    <script>
-        var db = firebase.database();
-        var ref = database.ref(document);
-        db.
-        ref.on("value", function(snapshot) {
-            var document = snapshot.val();
-
-            document.getElementByName("Distancia").textContent = document.Distancia;
-            document.getElementByName("Temperatura").textContent = document.Temperatura;
-            document.getElementByName("Humedad").textContent = document.Humedad;
-        })
-    </script>
 
 
 </head>
@@ -91,7 +85,7 @@
         </style>
 
         <p class="texto">
-            SISTEMA DOMOTICO
+            SISTEMA DOMOTICO ESPE
         </p>
         <style>
             .button {
@@ -126,35 +120,48 @@
             </tr>
         </table>
         </br>
-        <button class="button" onclick="">
-   <p class="texto3">  Encender Lampara</p>
 
-  
-</button>
+
         <br clear=all>
         <td> <img src="imagenes/foco.gif" , style="max-width:35%;width:auto;height:auto;"> </td>
         <br clear=all>
         </br>
         <p class="texto1">
-            DATO SENSOR TEMPERATURA
-            <p class="texto2"> Valor : <span id="Distancia"></span></p>
+            DATO Sensor Humedad
+            <p class="texto2"> Valor : <span id="sensor2"></span></p>
         </p>
         </br>
         <p class="texto1">
-            DATO SENSOR 2
-            <p class="texto2"> Valor : <span id="Humedad"></span></p>
+            DATO Sensor Temperatura
+            <p class="texto2"> Valor : <span id="sensor3"></span></p>
         </p>
         </br>
         <p class="texto1 ">
-            DATO SENSOR 3
-            <p class="texto2"> Valor : <span id="Temperatura"></span></p>
+            DATO Sensor Proximidad
+            <p class="texto2"> Valor : <span id="sensor1"></span></p>
         </p>
         </br>
         <p class="texto1">
-            DATO SENSOR 4
-            <p class="texto2"> Valor : <span id=" sensor4 "></span></p>
+            DATO Sensor Movimiento
+            <p class="texto2"> Valor : <span id="sensor4"></span></p>
         </p>
-
+        <script src="database.js"></script>
     </body>
+    <script>
+        function hacer_click() {
+            firebase.initializeApp(config);
+            var db = firebase.database();
+            db.update({
+                    LED: "1"
+                }
+
+            );
+
+            db.on('value', function(snapshot) {
+
+                console.log(snapshot.val());
+            });
+        }
+    </script>
 
 </html>
